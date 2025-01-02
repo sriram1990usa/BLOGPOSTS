@@ -1,3 +1,4 @@
+import mimetypes
 import os
 from pathlib import Path
 import dj_database_url
@@ -133,6 +134,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "blog/static"),
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+
+
+MEDIA_URL =  '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+mimetypes.add_type("text/css", ".css", True)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
